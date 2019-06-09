@@ -59,7 +59,15 @@ class Song
   end
 
   def self.new_from_filename(file)
+    # binding.pry
+    song = Song.new
 
+    record_chunks = file.split(" - ")
+    song.artist_name = record_chunks[0]
+
+    song.name = record_chunks[1].split('.mp3')[0]
+
+    song
   end
 
   def self.create_from_filename(file)
