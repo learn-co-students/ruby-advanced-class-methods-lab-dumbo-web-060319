@@ -4,13 +4,6 @@ class Song
   attr_accessor :name, :artist_name
   @@all = []
 
-  # def initialize
-  #   @name
-  #   @artist_name
-
-  #   @@all << self
-  # end
-
   def self.all
     @@all
   end
@@ -59,7 +52,6 @@ class Song
   end
 
   def self.new_from_filename(file)
-    # binding.pry
     song = Song.new
 
     record_chunks = file.split(" - ")
