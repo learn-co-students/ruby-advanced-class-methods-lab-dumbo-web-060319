@@ -45,11 +45,13 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    if Song.find_all_names.include? name
-        Song.find_by_name(name)
+    if Song.find_by_name(name)
+        song = Song.find_by_name(name)
     else
-        Song.create_by_name(name)
+        song = Song.create_by_name(name)
     end
+
+    song
   end 
 
   def self.alphabetical
